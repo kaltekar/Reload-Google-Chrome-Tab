@@ -47,11 +47,19 @@ EOF
 # Trap ctrl-c to exit cleanly.
 trap "echo \" Complete\"; exit 0" SIGINT SIGTERM
 
+if [ $# -lt 1 ]; then
+	echo "Usage: `basename $0` \"http://www.example.com\""
+	exit 1
+fi
+if [ $# -gt 1 ]; then
+	echo "Only one URL at a time please."
+	exit 1
+fi 
 # Set up an infinite loop
 loop=""
 echo "Press Ctrl-c to exit."
 until [ $loop ]; do 
-	echo Relaod
+	echo Reload "$tabURL"
 	reloadTab
 	sleep $reloadInterval
 done
