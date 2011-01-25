@@ -4,7 +4,7 @@
 # the specified reload interval
 # Created Nov 30, 2010 by Reed Stoner (kaltekar@gmail.com)
 
-tabURL="http://www.example.com/" 	# remember to include the trailing "/"
+tabURL="$1" 	# remember to include the trailing "/"
 reloadInterval=300 					# Interval in seconds
 
 # function to run the Applescript that reloads the Google Chrome tab.  
